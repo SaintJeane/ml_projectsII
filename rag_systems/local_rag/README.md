@@ -29,7 +29,7 @@ The notebook implements a complete RAG pipeline with the following components:
 
 ## Requirements
 
-- Python 3.x
+- Python 3.12
 - PyTorch
 - Transformers
 - sentence-transformers

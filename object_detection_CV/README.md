@@ -1,8 +1,8 @@
 # Object Detection Project
 
-This repository contains two notebooks focusing on object detection tasks:
+This subfolder contains two notebooks focusing on computer vision object detection tasks:
 
-## Drawing_Bounding_Box.ipynb
+## [Drawing_Bounding_Box.ipynb](https://github.com/SaintJeane/ml_projectsII/blob/main/object_detection_CV/Drawing_Bounding_Box.ipynb)
 A comprehensive guide to working with bounding boxes in computer vision, covering:
 
 - Different bounding box formats and their use cases:
@@ -21,7 +21,7 @@ A comprehensive guide to working with bounding boxes in computer vision, coverin
   - Matplotlib
   - Torchvision
 
-## Object_Detection_Notebook.ipynb
+## [Object_Detection_Notebook.ipynb](https://github.com/SaintJeane/ml_projectsII/blob/main/object_detection_CV/Object_Detection_Notebook.ipynb)
 A complete implementation of an object detection model that detects trash, hands, and bins. Key features include:
 
 - Model: Uses Hugging Face's `AutoImageProcessor` and `AutoModelForObjectDetection` with the `PekingU/rtdetr_v2_r50vd` model
@@ -37,10 +37,10 @@ A complete implementation of an object detection model that detects trash, hands
 - Model evaluation
 
 ## Requirements
-- Python 3.x
+- Python 3.12
 - PyTorch
-- torchvision
-- transformers
+- Torchvision
+- Transformers
 - PIL
 - matplotlib
 - numpy

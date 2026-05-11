@@ -1,6 +1,6 @@
-# Multimodal RAG (MRAG) — README
+# Local Multimodal RAG (MRAG)
 
-This folder contains two Jupyter notebooks and a small setup for a local, simple multimodal Retrieval-Augmented Generation (RAG) system that:
+This subfolder contains two Jupyter/Google Colab notebooks and a small setup for a local, multimodal Retrieval-Augmented Generation (RAG) system that:
 
 - Extracts text and images from PDFs (via PyMuPDF / fitz).
 - Generates captions/descriptions for images using a multimodal LLM (Gemma3).
@@ -11,7 +11,7 @@ This folder contains two Jupyter notebooks and a small setup for a local, simple
 Notebooks
 ---------
 
-- `MRAG_HF_Upload.ipynb` — code to prepare a small project directory (under `setup/multimodal_rag/`) that can be uploaded to a Hugging Face Space programmatically from the notebook. This notebook writes the following files into the `setup/multimodal_rag/` folder:
+- [`MRAG_HF_Upload.ipynb`](https://github.com/SaintJeane/ml_projectsII/blob/main/rag_systems/multimodal_rag/MRAG_HF_Upload.ipynb) — code to prepare a small project directory (under `setup/multimodal_rag/`) that can be uploaded to a Hugging Face Space programmatically from the notebook. This notebook writes the following files into the `setup/multimodal_rag/` folder:
 	- `app.py` — Gradio app that exposes the PDF upload + chat UI.
 	- `main.py` — pipeline: extract pages, caption images, merge & chunk, create embeddings, FAISS index, semantic search, and answer generation/streaming.
 	- `model_setup.py` — loads the embedding model and Gemma3 model + processor (example uses CPU/quantized options for Spaces compatibility).
@@ -19,7 +19,7 @@ Notebooks
 	- `requirements.txt` — packages to include when publishing to Hugging Face Space.
 	- `README.md` (inside setup folder) — metadata block and short description used by Hugging Face Spaces.
 
-- `Simple_Local_Multimodal_RAG.ipynb` — a self-contained notebook that implements the same pipeline locally (in-notebook). It demonstrates:
+- [`Local_Multimodal_RAG.ipynb`](https://github.com/SaintJeane/ml_projectsII/blob/main/rag_systems/multimodal_rag/Simple_Local_Multimodal_RAG.ipynb) — a self-contained notebook that implements the same pipeline locally (in-notebook). It demonstrates:
 	- Loading and quantizing Gemma3 with bitsandbytes (optional).
 	- Text and image extraction from PDFs.
 	- Caption generation for images.
@@ -58,7 +58,7 @@ Notes on hardware
 How to use (local notebook)
 ----------------------------
 
-1. Open `Simple_Local_Multimodal_RAG.ipynb` and run the cells in order. Key workflow:
+1. Open `Local_Multimodal_RAG.ipynb` and run the cells in order. Key workflow:
 	 - Install requirements (if not already installed).
 	 - Load/quantize model and processor, or skip/replace if you don't have access to Gemma3.
 	 - Upload or place a PDF next to the notebook and set `pdf_path` and `image_dir` variables.
