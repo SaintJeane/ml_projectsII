@@ -1,6 +1,8 @@
-# Retrieval-Augmented Generation (RAG) systems — Overview
+# Retrieval-Augmented Generation (RAG) systems
 
 This repository contains example projects and notebooks that implement Retrieval-Augmented Generation (RAG) workflows. The focus is on simple, local and upload-ready multimodal RAG pipelines that combine PDF text extraction, image captioning, semantic search (FAISS) and LLM-based answer generation via a Gradio interface.
+
+## Overview
 
 Contents (high-level)
 ---------------------
