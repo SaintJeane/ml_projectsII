@@ -11,7 +11,7 @@ This subfolder contains two Jupyter/Google Colab notebooks and a small setup for
 Notebooks
 ---------
 
-- [`MRAG_HF_Upload.ipynb`](https://github.com/SaintJeane/ml_projectsII/blob/main/rag_systems/multimodal_rag/MRAG_HF_Upload.ipynb) — code to prepare a small project directory (under `setup/multimodal_rag/`) that can be uploaded to a Hugging Face Space programmatically from the notebook. This notebook writes the following files into the `setup/multimodal_rag/` folder:
+- [`mrag_hf_upload.ipynb`](mrag_hf_upload.ipynb) — code to prepare a small project directory (under `setup/multimodal_rag/`) that can be uploaded to a Hugging Face Space programmatically from the notebook. This notebook writes the following modular scripts into the `setup/multimodal_rag/` folder:
 	- `app.py` — Gradio app that exposes the PDF upload + chat UI.
 	- `main.py` — pipeline: extract pages, caption images, merge & chunk, create embeddings, FAISS index, semantic search, and answer generation/streaming.
 	- `model_setup.py` — loads the embedding model and Gemma3 model + processor (example uses CPU/quantized options for Spaces compatibility).
@@ -19,7 +19,7 @@ Notebooks
 	- `requirements.txt` — packages to include when publishing to Hugging Face Space.
 	- `README.md` (inside setup folder) — metadata block and short description used by Hugging Face Spaces.
 
-- [`Local_Multimodal_RAG.ipynb`](https://github.com/SaintJeane/ml_projectsII/blob/main/rag_systems/multimodal_rag/Simple_Local_Multimodal_RAG.ipynb) — a self-contained notebook that implements the same pipeline locally (in-notebook). It demonstrates:
+- [`local_multimodal_rag.ipynb`](local_multimodal_rag.ipynb) — a self-contained notebook that implements the same pipeline locally (in-notebook). It demonstrates:
 	- Loading and quantizing Gemma3 with bitsandbytes (optional).
 	- Text and image extraction from PDFs.
 	- Caption generation for images.
@@ -102,10 +102,10 @@ Limitations & suggestions
 Files created by the upload notebook
 -----------------------------------
 
-- setup/multimodal_rag/app.py     — Gradio app (entrypoint for Space)
-- setup/multimodal_rag/main.py    — Core pipeline (extract, caption, chunk, embed, FAISS)
+- setup/multimodal_rag/app.py — Gradio app (entrypoint for Space)
+- setup/multimodal_rag/main.py — Core pipeline (extract, caption, chunk, embed, FAISS)
 - setup/multimodal_rag/model_setup.py — Loads models and processors
-- setup/multimodal_rag/utils.py   — helpers (save/load cache, FAISS helpers)
+- setup/multimodal_rag/utils.py — helpers (save/load cache, FAISS helpers)
 - setup/multimodal_rag/requirements.txt — requirements used by the Space
 - setup/multimodal_rag/README.md — metadata and short description for HF Spaces
 
