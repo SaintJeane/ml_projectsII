@@ -1,6 +1,6 @@
 <div align="center">
 
-# Machine Learning Projects
+# Machine Learning Projects II
 
 </div>
 
@@ -36,19 +36,47 @@
 
 </div>
 
+## Overview
 
+Repository containing end-to-end machine learning projects on object detection (computer vision) and local retrieval-augmented generation (RAG) systems, including their evaluation and deployment.
 
-# Overview
-------------------------------------------------------------
-Repository contains Computer Vision based and Natural Language Processing (RAG based) machine learning projects.
+## Projects
 
-They are:
-  - [`Object Detection (Computer Vision)`](object_detection_CV/): 
-      Contains [`Drawing_Bounding_Box.ipynb`](object_detection_CV/Drawing_Bounding_Box.ipynb) demonstrating how to effectively draw a bounding box on an image and [`Object_Detection_Notebook.ipynb`](object_detection_CV/Object_Detection_Notebook.ipynb) showcasing the building of the actual object detection system and its deployment into Hugging Face Spaces for live inference.
+### 🗑️ [Trash Object Detection System](object_detection_CV/)
+RT-DETRv2 fine-tuned to detect trash, hands, and bins in real-world photos, with three deliberate hard-negative classes (`not_trash`, `not_hand`, `not_bin`) so the model learns to reject near-misses rather than just recognize positives. Deployed as a gamified Gradio demo.
+- **Live demo:** [Trash Object Detection](https://huggingface.co/spaces/Saint5/trash_object_detection_demo)
+- **Result:** mAP@50 of 0.524 on a held-out test split; weaker on medium-sized objects (mAP 0.13), a known limitation tied to dataset scale.
 
-  - [`Rag Systems (NLP)`](rag_systems/): subfolder is divided into:
-  
-    - [`local_rag`](rag_systems/local_rag/): consists of local RAG system built from scratch.
+### 📚 [Local RAG from Scratch](rag_systems/local_rag/)
+A RAG pipeline built without any retrieval framework — chunking, embedding, semantic search, and generation implemented directly with PyTorch and HuggingFace primitives, using Gemma as the local LLM. A reference notebook, not a deployed demo — the deliberate "from scratch" companion to the framework-based systems below.
 
-    - [`multimodal_rag`](rag_systems/multimodal_rag/): contains implementation of a local multimodal RAG system.
----------------------------------------------------------- 
+### 📄 [Local Multimodal RAG](rag_systems/multimodal_rag/)
+Answers questions about uploaded PDFs by retrieving from both the document's text and captioned descriptions of its images, using a 4-bit quantized `google/gemma-3-4b-it` for both captioning and grounded answer generation, backed by a FAISS index.
+- **Live demo:** [Multimodal RAG System](https://huggingface.co/spaces/Saint5/multimodal_rag_system)
+
+Each project folder has its own README covering pipeline design, model/training details, evaluation results, engineering decisions, and known limitations.
+
+## Repository Structure
+
+```text
+├── object_detection_CV/
+│   ├── Drawing_Bounding_Box.ipynb
+│   ├── Object_Detection_Notebook.ipynb
+│   └── README.md
+├── rag_systems/
+│   ├── local_rag/
+│   │   ├── Local_RAG_from_Scratch.ipynb
+│   │   └── README.md
+│   ├── multimodal_rag/
+│   │   ├── Local_Multimodal_RAG.ipynb
+│   │   ├── MRAG_HF_Upload.ipynb
+│   │   └── README.md
+│   └── README.md
+├── README.md
+├── .gitignore
+└── LICENSE
+```
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
